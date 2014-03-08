@@ -1,6 +1,9 @@
 Adkill and Media Download   0.42.3  最后一个版本 
 
-请有能力修改完善此扩展的 尽情fork 并pull request给我！  万分感谢
+请有能力修改完善此扩展的 
+
+尽情fork 并pull request给我！  万分感谢
+
 ===========
 
 去视频广告、视频音频下载、正常显示反盗链图片三合一 by xplsy
@@ -34,3 +37,7 @@ Adkill and Media Download   0.42.3  最后一个版本
 正常显示反盗链图片：功能完全照搬referer changer，很好用的功能，我就一起加到扩展里了，感谢作者dindog。(此功能可以直接观看QQ、56源的外链视频)
 
 屏蔽google搜索结果的跳转：我采用的是直接修改请求url的方法，所以搜索结果页面上链接的地址不会变，但点击后会直接打开结果页而不会经过google的重定向页面。
+
+
+Chrome商店   https://chrome.google.com/webstore/detail/adkill-and-media-download/lcibdonokophlabplhpmmmjjbgohgcok/details?hl=zh-CN
+
