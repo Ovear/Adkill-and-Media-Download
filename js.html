@@ -1,0 +1,46 @@
+<html>
+<body style="width: 420px">
+    <h3>过滤规则和正则表达式互转</h3>
+    规则(正则):<br />
+    <textarea id="TextAreaRuler" cols="50" rows="10"></textarea><br />
+    <br />
+    <input type="submit" value="转换成正则表达式" onclick="change()" />
+		<input type="submit" value="转换成过滤规则" onclick="change(true)" />
+		<label class="checkbox"><input type="checkbox" id="regexbr" checked="checked" onclick="change()">正则换行</label>
+		<br />
+    <br />
+    结果：<br />
+    <textarea id="TextAreaResult" cols="50" rows="10"></textarea><br /><br />
+    <br />
+<script type="text/javascript">
+		var regexbr=document.getElementById('regexbr');
+    function change(flag) {
+        var str = document.getElementById('TextAreaRuler').value;
+		if(!flag)
+	        convert(str);
+		else
+			reconvert(str);
+    }
+    function convert(str) {
+		//convert('"*://secure.gaug.es/*"');
+        ////    替换规则: 
+        ////    /\*:/g 替换所有 "*:" 为空
+        ////    /\./g  替换所有 "."  为\.
+        ////    /(\\)?\/(\*)?"/g 替换所有结尾是 \/*"或/*"或/" 的为 '/'
+        ////    /\* /g 替换所有 "*" 为.*
+        ////    /"/g   替换首尾引号" 为 "/"
+
+        var res = str.replace(/\*:/g, "").replace(/\./g, "\\.").replace(/\//g,"\\/").replace(/\^/g,"").replace(/\n$|\n\n/g,"")
+            .replace(/(\\)?\/(\*)?"/g, '/').replace(/\*/g, ".*").replace(/"/g, "/").replace(/\|\|/g,"(\\/\\/|\\.)");
+						if(!regexbr.checked)
+							res = res.replace(/^|$/g,"/").replace(/\n/g,"/,/");
+        document.getElementById('TextAreaResult').value = res;
+    }
+    function reconvert(str) {
+        var res = str.replace(/(\()?(\\\/\\\/)(\|\\\.\))?/g, "||").replace(/\\/g, "").replace(/\.\*/g, "*")
+			.replace(/\/,\//g,"\n").replace(/^\/|\/$/g,"");;
+        document.getElementById('TextAreaResult').value = res;
+    }
+	 </script>
+</body>
+</html>

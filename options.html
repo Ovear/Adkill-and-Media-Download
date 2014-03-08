@@ -1,0 +1,131 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title> 选项 - Adkill and Media Download </title>
+<style>
+  body {
+    margin:10px;
+    font-size:13px;
+    background: #EBEFF9;
+    font-family: arial, sans-serif;
+  }
+  .contentBox {
+    background-color: #ffffff;
+    padding: 30px;
+    text-align: left;
+    margin: 50px auto 20px auto;
+    width: 657px;
+	border: 1px solid #d7dae1;
+    -webkit-border-radius: 20px 20px;
+	-webkit-box-shadow: #d7dae1 0px 0px 10px 2px;
+  }
+  #header {
+    padding-bottom:1em;
+    padding-top:1em;
+	text-align:center; 
+	background:url(icon64.png) no-repeat 70px 12px;
+  }
+  #header h1 {
+	text-shadow: 1px 2px 3px #99BBD9;
+    font-size: 30px;
+    display:inline;
+    color: #3d5d6a;
+    padding-left:12px;
+  }
+  #header h4 {
+	text-shadow: 1px 2px 3px #D5D5D5;
+    color: gray;
+	margin-top:0px;
+    padding-left:30px;
+  }
+  a {
+    color: #1C7EC5;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .options{margin-bottom:20px;}
+  .OptionTitle {
+    color: #333333;
+    line-height: 28px;
+    font-size:15px; 
+	border-bottom: 3px dotted #CCDDED;
+  }
+  .youku{
+	padding-bottom:1em;
+	line-height:25px;
+	padding-left:2em;
+  }
+  .updateinfo{
+    padding-left:1.5em;
+  }
+  .gray{
+	color:gray;
+  }
+	#custom {
+		width:60%;
+	}
+  p {
+    padding-left:2em;
+    font-size:14px;
+	color:gray;
+  }
+  .tip_succeed {
+	background: #fff1a8;
+	color: #000000;
+	position :fixed;
+	border-radius: 4px 4px;
+	height: 30px;
+	line-height: 30px;
+	top: 200px;
+	margin: 0 auto;
+	padding: 0 10px;
+	font-size: 12px;
+  }
+  .updating{
+	background:transparent url('data:image/gif;base64,R0lGODlhEAAQALMAAO7u7gAAAODg4IGBgdHR0UFBQXJyclJSUiEhIaGhobKyshISEpKSkgMDAzIyMmFhYSH/C05FVFNDQVBFMi4wAwEAAAAh+QQFCgAAACwAAAAAEAAQAAAEcRBIIOg7dWpAEBFBQFCbRASI0IjCqBHjEAwrnElCMYPNcXymDEHXULhwQJwg4TjiNIOCj1GiCK7RQoFaul6tCsMtqBEMFgVnyzgxIBjmAYyQoLA5I4JDkWAQ5E8TAgcGAAxUBHAlBAYjhxIKYyUKClURACH5BAUKAAAALAAAAAAPABAAAARdEMgJzJOCziKRJEuiSQ6ANGagjBKDLEzATQcMLI4VBFkmHQAHYaIYsmYsQOJhMKySAMbh8XhCP4yRb5IoADUCgm9QEDFEn89W8iAoEgKrxpB9S+QYRsYOMCYJfhMRACH5BAUKAAAALAAAAAAQAA8AAARbEMgJ2KBYPlmQEE4mNQfQCWUmVEDSJROhSIYDO8UwhMQQBATNIiUhMH6B2UTxWC0DF4lCxwhinJKEYSvqtryYxwDbZRhmCsXnI3JeCEECmcKYwQECawYGuOMpEQAh+QQFCgAAACwAAAAAEAAQAAAEXBDIKRm90ghwijwKBjgG5z3YJi1KF6ICIQ2PXBgM4wnWohokgAqgQIgAJYqsJtgwEgnRY7FogHIM2eUR6DoooQthTFARBpbjRJEFjNVCiUDRHB4VsibcLbfD9RgRACH5BAUKAAAALAAAAAAQAA4AAARFEMgJjKFYHhkCz9zWAQsoGV7HkNixKEDgWF4VT0ewYfVK7RjHhABg+IKdQMlyyZQ+Q4xCljlOph0iQGtKZrgUBVACBkUAACH5BAUKAAAALAAAAAAQABAAAARrEMgJlKIYiCSHkQaRCQY3DMCAiBnxECexoJSSiANjGU6FFBKBYqAQTASEA8DBkhA4FEGBYdQQrlUK43AoDK7YDAOBWDyiGIKDgUE2AU8JMEgwCqqLQBKwyGYSAUoAUGgTCAEXI2kBbBmOfhEAIfkEBQoAAAAsAAAAABAAEAAABFsQyAkIoVgqyRjP3JV4TAFKgzACRYJZApAoFvNIxS0RdPYsB4zggnm4JoIkKPF4BJPKTKLgcBhOk0Miit0AHjGQ4YEACG6O0yIwAFx5IMGaSIw3ApfGMX5whCkRACH5BAUKAAAALAEAAQAPAA8AAARWEEgilZJJ6lqvetvmXc8FCKdGUEBiAMQxSAKBhobzbvc2mKGgwkDMBDWfg+xIKwVrrBoCsNsEAoNBYTor+AIGBIIBmIUIV8pC4DgmApfFGoAAqjSHYwQAIfkEBQoAAAAsAAAAABAAEAAABF0QyAmEoFheQIhUG0ZcHceElOB1wuBhm2UpiTQwGcw8eI4xLx+FMCgKJwSDsvZBKDCuYSEQ6E0Ki4GmEXB4EIzEowBgIB4SxtPmcNR6wQlC0AYcGr7G1yEh5zZKOREAIfkEBQoAAAAsAAABABAADwAABFoQyAmEkIRqaaXaWvdtmUaUzAhOyaBcVEmpwLPcD5jsihP8BRCD4RKcGAuZhLECvCaCh4MpQdQEiEICMDg4DwZJQsY4FBSLLUzjAJgBhvZGYQUUgjXlZjAARQAAIfkEBQoAAAAsAAABABAADwAABFgQyEmBqHgKUgnHxEUFwVCJgvIpZPBNhFoZQdKJEqJngOITh8ZiYcj4Eh9BooCxVQ6Sl2TwcAIcgGLh4GM8JAaGRCERJwwPApa3YKIBDCZI/oAKiryyGBMBACH5BAUKAAAALAAAAQAPAA8AAARaEEi1iLz4qoCyl0eQfFIHEEHgEcJpMuMlsBjTKFkrDU5RDJ4ZgWBAGIG5oaWlOHhwMgNg4UkMoE7gwzBMME6w02ShGEgfFoBO7XgAzICEYX1xv6WALykew0QAADs=') no-repeat 54px 1px;
+	color:gray;
+  }
+</style>
+</head>
+<body>
+<div class="contentBox">
+  <div id="header">
+    <h1>Adkill and Media Download</h1>
+	<h4>去视频广告、视频音频下载、正常显示反盗链图片三合一 by xplsy</h4>
+  </div>
+  <div class="options">
+    <h4 class="OptionTitle">设置程序功能选项：</h4>
+	<label class="checkbox">
+		<input type="checkbox" id="adkill" checked >开启拦截视频广告功能</label>
+		<p>开启此功能后可以拦截国内主要视频网站加载视频前的广告。过滤规则大部分来自<a href="http://adblock-chinalist.googlecode.com/svn/trunk/adblock.txt" target="_blank" >ChinaList</a>，并补充了些个人收集规则。去优酷广告采用的播放器来自<a href="http://opengg.me/781/opengg-clean-player/" target="_blank" >OpenGG</a>作者鲁夫和<a href="http://userscripts.org/scripts/review/119622" target="_blank" >YoukuAntiADs</a>作者Harv.c以及<a href="http://userscripts.org/scripts/show/162286" target="_blank" >OpenGG.Bae版</a>作者kawaiiushio，还有特别感谢卡饭的<a href="http://bbs.kafan.cn/thread-1507278-1-1.html" target="_blank" >15536900</a>一直更新播放器。</p>
+		<div class="youku">
+			<label class="gray">优酷去广告模式：</label>
+			<label><input type="radio" name="admoderadio" id="mode0">页面脚本<span style="color:green">(建议chrome33及以上版本使用)</span></label>
+			<label><input type="radio" name="admoderadio" id="mode1">替换请求</label><br>
+			<label class="gray">优酷播放器选择：</label>
+			<br><label><input type="radio" name="ykradio" id="yk0">[qiniu旧版]</label><span id="yktip0"></span><span id="yktime0" class="updating">载入中...　　</span>
+			<br><label><input type="radio" name="ykradio" id="yk1">[qiniu新版]</label><span id="yktip1"></span><span id="yktime1" class="updating">载入中...　　</span>
+			<br><label><input type="radio" name="ykradio" id="yk2">[gcode版(国外)]</label><span id="yktip2"></span><span id="yktime2" class="updating">载入中...　　</span>
+			<br><label><input type="radio" name="ykradio" id="yk3">[opengg版(国外)]</label><span id="yktip3"></span><span id="yktime3" class="updating">载入中...　　</span>
+			<br><label><input type="radio" name="ykradio" id="yk6">[网友提供]</label><span id="yktip6"></span><span id="yktime6" class="updating">载入中...　　</span>
+			<br><label><input type="radio" name="ykradio" id="yk4">[自定义播放器]</label><span id="yktip4"></span><span id="yktime4" class="updating">载入中...　　</span>
+			<br><label><input type="radio" name="ykradio" id="yk5">[本地播放器]</label><span id="yktip5"></span><span id="yktime5" class="updating">载入中...　　</span><label style="color:red">　本地版使用说明：1.务必在chrome://plugins/页面启用PPAPI类flash插件!　2.chrome33及以上版本需使用页面脚本去广告模式</label>
+			<br><label style="color:green">注意：只要点击链接能不白屏出现播放器即可，您可以请自行选择当前网络打开最快的版本。切换播放器后请重新刷新播放页面即可生效。(加载用时的测试结果仅供参考)</label>
+		</div>
+	<label class="checkbox">
+		<input type="checkbox" id="media-download" checked >开启探测视频音频功能</label>
+		<p>开启此功能后可以探测网站中视频、音频及flash文件的真实地址。同时提供一个播放器供下载前预览视频、音频(swf和wma文件可能无法预览)，播放器来自Firefox上的插件NetVideoHunter。</p>
+		<div class="youku">
+			<label class="checkbox"><input type="checkbox" id="media-show" checked>扩展图标上显示媒体资源数</label>
+			<br><label class="gray">开启后在扩展图标上显示前页面探测到的媒体资源数目(此项功能更改后，已经打开的页面刷新后才生效)。</label>
+		</div>
+	<label class="checkbox">
+		<input type="checkbox" id="referer-changer" checked >开启显示反盗链图片功能</label>
+		<p>开启此功能后可以正常显示反盗链图片。此部分完全来自<a href="http://code.google.com/p/chrome-referer-changer/" target="_blank" >referer changer</a>，我只做了整理和整合的工作，感谢作者dindog。</p>
+	<label class="checkbox">
+		<input type="checkbox" id="ggredirect" checked >屏蔽google搜索结果的跳转</label>
+		<p>开启此功能后可以直接打开google搜索页的搜索结果，去除了google搜索结果的重定向页面。我这里采用的是直接修改请求url的方法，所以页面上链接的地址不会变，但点击后会直接打开结果页而不会经过google的重定向页面。</p>
+  </div>
+<script src="options.js"></script>
+</body>
+</html>

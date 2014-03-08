@@ -1,0 +1,93 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<style type="text/css">
+  body{
+	min-width:300px;
+  }	
+  .listtitle{
+	margin-top:18px;
+	margin-bottom:10px;
+  }
+  h4{
+	color:blue;
+	font-size: 14px;
+	display: inline;
+  }
+  label.checkbox {
+	display: inline;
+	float:right;
+	font-size: 14px;
+	vertical-align: middle;
+  }
+  .checkbox input{
+	float: left;
+	margin-top:2px;
+  }
+  .mylist {
+	text-align: left;
+	cursor: default;
+	max-width:700px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	table-layout:fixed;
+  }
+  .mylist td{
+	padding: 0px;
+	vertical-align:middle;
+	max-width:500px;
+	word-wrap:break-word; overflow:hidden;
+	/*word-break:break-all;*/
+  }
+  .mylist a:link{
+	color:grey;
+	text-decoration:none;
+  }
+  .mylist a:visited{
+	color:#551A8B;
+  }
+  .mylist a:hover{
+	color:#9CBA39;
+  }
+  .mylist a:active{
+	color:red;
+  }
+  .loading{text-align:center;color:grey;}
+  .full{width:100%}
+  .red{color:red;font-weight:bold;}
+  #player {text-align:center;}
+  #player input{vertical-align:top;margin:0px;background:#F0F0F0 url(close.png) no-repeat 2px 1px;}
+	#options {color:orange;}
+	#options img{margin:2px 2px 0 0;float: left;}
+</style>
+</head>
+<body>
+<!--	<label><input type="checkbox" checked>开启视频广告拦截功能</label><br>
+	<hr><br>-->
+	<div class="listtitle">
+		<h4>当前标签媒体资源:</h4>
+		<label class="checkbox"><a id="options" target="_blank" href="options.html" title="点击进入扩展选项设置"><img src="gear.png">设置</a></label>
+	</div>
+    <table id="mediatable" class="mylist">
+      <thead><tr>
+        <th id="mediaurl" data-column="url" colspan="3">资源</th>
+      </tr></thead>
+      <tbody id="medialist"><tr class="loading"><td colspan="3">暂无媒体资源</td></tr></tbody>
+    </table>
+	<div id="player"></div>
+	<div class="listtitle">
+		<h4>当前标签过滤请求:</h4>
+		<label class="checkbox"><input type="checkbox" id="whitecheck" checked>拦截此标签页广告</label>
+	</div>
+    <table id="blocktable" class="mylist" >
+      <thead><tr>
+        <th id="website" data-column="url" colspan="3">请求</th>
+        <!--<th data-column="type">类型</th>
+        <th data-column="filter">符合过滤规则</th>
+        <th data-column="thirdparty">第三方请求</th>-->
+      </tr></thead>
+      <tbody id="blocklist"><tr class="loading"><td colspan="6">暂无过滤请求</td></tr></tbody>
+    </table>
+<script src="popup.js"></script>
+</body>
+</html>
